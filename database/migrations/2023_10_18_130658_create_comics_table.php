@@ -28,6 +28,13 @@ return new class extends Migration
             $table->string('series', 50);
             // sale_date
             $table->dateTime('sale_date');
+            // type
+
+            // artists
+
+            // writers
+
+            
             
             $table->timestamps();
         });

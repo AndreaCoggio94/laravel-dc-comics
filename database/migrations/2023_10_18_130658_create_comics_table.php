@@ -21,19 +21,21 @@ return new class extends Migration
             // description
             $table->text('description');
             // thumb
-            $table->string('thumb', 50);
+            $table->string('thumb');
             // price
             $table->float('price', 5, 2);
             // series
             $table->string('series', 50);
             // sale_date
-            $table->dateTime('sale_date');
+            $table->dateTime('sale_date', $precision = 0);
             // type
-
+            $table->string('type', 20);
+            
+            // Future update
             // artists
-
+            // $table->string('company', 50);
             // writers
-
+            // $table->string('company', 50);
             
             
             $table->timestamps();

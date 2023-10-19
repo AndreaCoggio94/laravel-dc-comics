@@ -18,6 +18,8 @@
     @yield('main-content')
   </main>
 
+  @include('partials._modalDelete')
+
 </body>
 
 </html>

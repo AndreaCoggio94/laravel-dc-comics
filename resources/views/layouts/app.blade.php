@@ -15,10 +15,17 @@
   @include('partials._navbar')
 
   <main>
+    @if (session('message'))
+        <div class="alert alert-{{session('message_type') ?? 'info'}} mb-2">
+          {{session('message')}}
+        </div>
+    @endif
     @yield('main-content')
   </main>
 
-  @include('partials._modalDelete')
+  @yield('modal')
+
+  
 
 </body>
 

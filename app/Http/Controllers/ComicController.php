@@ -96,6 +96,8 @@ class ComicController extends Controller
     {
         $comic->delete();
 
-        return redirect()->route('comics.index');
+        return redirect()->route('comics.index')
+        ->with('message_type', 'danger')
+        ->with('message','comic eleminated with success');
     }
 }

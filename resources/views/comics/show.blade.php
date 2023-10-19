@@ -8,6 +8,8 @@
               <h5 class="card-title">{{$comic->title}}</h5>
               <p class="card-text">{{$comic->description}}</p>
               <a href="{{ route('comics.index')}}" class="btn btn-primary">Return to comics</a>
+              <a href="{{ route('comics.edit', $comic)}}" class="btn btn-warning">Edit this comic</a>
+              
             </div>
           </div>
     </div>

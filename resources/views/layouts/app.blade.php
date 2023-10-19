@@ -16,9 +16,12 @@
 
   <main>
     @if (session('message'))
-        <div class="alert alert-{{session('message_type') ?? 'info'}} mb-2">
-          {{session('message')}}
-        </div>
+    <div class="container">
+
+      <div class="alert alert-{{session('message_type') ?? 'info'}} mb-2">
+        {{session('message')}}
+      </div>
+    </div>
     @endif
     @yield('main-content')
   </main>

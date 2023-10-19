@@ -19,17 +19,23 @@ class ComicsTableSeeder extends Seeder
         $_comics = config('comics');
 
         foreach($_comics as $_comic) {
+            
+
             $comic = new Comic();
+            $comic->title = $_comic['title'];
+            $comic->description = $_comic['description'];
+            $comic->thumb = $_comic['thumb'];
+            $comic->price = $_comic['price'];
+            $comic->series = $_comic['series'];
+            $comic->sale_date = $_comic['sale_date'];
+            $comic->type = $_comic['type'];
+            
+            // unset($_comic['artists']);
+            // unset($_comic['writers']);
+            
+            // $comic = new Comic();
 
-            // $comic->title = $_comic['title'];
-            // $comic->description = $_comic['description'];
-            // $comic->thumb = $_comic['thumb'];
-            // $comic->price = $_comic['price'];
-            // $comic->series = $_comic['series'];
-            // $comic->sale_date = $_comic['sale_date'];
-            // $comic->type = $_comic['type'];
-
-            $comic->fill($_comic);
+            // $comic->fill($_comic);
 
             $comic->save();
         }

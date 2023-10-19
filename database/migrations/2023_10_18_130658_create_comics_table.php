@@ -21,7 +21,7 @@ return new class extends Migration
             // description
             $table->text('description');
             // thumb
-            $table->string('thumb');
+            $table->text('thumb');
             // price
             $table->float('price', 5, 2);
             // series

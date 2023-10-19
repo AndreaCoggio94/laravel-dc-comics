@@ -27,7 +27,7 @@ return new class extends Migration
             // series
             $table->string('series', 50);
             // sale_date
-            $table->dateTime('sale_date', $precision = 0);
+            $table->date('sale_date');
             // type
             $table->string('type', 20);
             

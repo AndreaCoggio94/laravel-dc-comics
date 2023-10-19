@@ -50,9 +50,9 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Comic $comic)
     {
-        $comic = Comic::find($id);
+        // $comic = Comic::find($comic);
         
         return view('comics.show', compact('comic'));
     }
@@ -63,10 +63,10 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-        //
-    }
+    // public function edit($id)
+    // {
+    //     //
+    // }
 
     /**
      * Update the specified resource in storage.
@@ -75,10 +75,10 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        //
-    }
+    // public function update(Request $request, $id)
+    // {
+        
+    // }
 
     /**
      * Remove the specified resource from storage.
@@ -86,8 +86,8 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
-    }
+    // public function destroy($id)
+    // {
+    //     //
+    // }
 }

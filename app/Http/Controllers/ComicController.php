@@ -129,7 +129,7 @@ class ComicController extends Controller
             'thumb.string' => 'The thumb must be a url',
 
             'price.required' => 'The price is required',
-            'price.integer' => 'The price must be a number',
+            'price.decimal' => 'The price must be a number with a 2 digit decimal ex: 9,00',
 
             'series.required' => 'The series is required',
             'series.string' => 'The series must be a string',

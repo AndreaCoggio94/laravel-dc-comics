@@ -3,7 +3,16 @@
 
 @section('main-content')
     <div class="container">
-
+         @if ($errors->any())
+            <div class="alert alert-danger">
+                <h4>Fix the errors to continue:</h4>
+                <ul>
+                    @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         
         <form action="{{route('comics.update', $comic)}}" method="POST">
             @csrf

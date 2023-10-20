@@ -19,6 +19,8 @@
             <th scope="col">sale date</th>
             <th scope="col">type</th>
             <th scope="col">details</th>
+            <th scope="col">edit</th>
+            <th scope="col">delete</th>
         </tr>
     </thead>
     <tbody>

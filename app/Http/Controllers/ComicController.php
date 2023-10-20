@@ -39,7 +39,8 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
+        $data = $this->validation($request->all());
+        // $data = $request->all();
         $comic = new Comic();
         $comic->fill($data);
         $comic->save();
@@ -82,8 +83,8 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
-        $data = $request->all();
-
+        
+        $data = $this->validation($request->all(), $comic->id);
         $comic->update($data);
 
         return redirect()->route('comics.show', $comic)
@@ -114,7 +115,7 @@ class ComicController extends Controller
             'title' => 'required|string',
             'description' => 'nullable|string',
             'thumb' => 'nullable|string',
-            'price' => 'required|integer',
+            'price' => 'required|decimal:2',
             'series' => 'required|string',
             'sale_date'=> 'required|date',
             'type' => 'required|string',

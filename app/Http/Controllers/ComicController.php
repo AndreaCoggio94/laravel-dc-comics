@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Comic;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class ComicController extends Controller
 {
@@ -104,4 +105,42 @@ class ComicController extends Controller
         ->with('message_type', 'danger')
         ->with('message','comic eleminated with success');
     }
+
+
+    private function validation($data) {
+        $validator = Validator::make(
+          $data,
+          [
+            'title' => 'required|string',
+            'description' => 'nullable|string',
+            'thumb' => 'nullable|string',
+            'price' => 'required|integer',
+            'series' => 'required|string',
+            'sale_date'=> 'required|date',
+            'type' => 'required|string',
+          ],
+          [
+            'title.required' => 'The title is required',
+            'title.string' => 'The title must be a string',
+
+            'description.string' => 'The description must be a string',
+            
+            'thumb.string' => 'The thumb must be a url',
+
+            'price.required' => 'The price is required',
+            'price.integer' => 'The price must be a number',
+
+            'series.required' => 'The series is required',
+            'series.string' => 'The series must be a string',
+
+            'sale_date.required' => 'The sale date is required',
+            'sale_date.date' => 'The sale date must be a date',
+
+            'type.required' => 'The type is required',
+            'type.string' => 'The type must be a string',
+          ]
+        )->validate();
+      
+        return $validator;
+      }
 }
